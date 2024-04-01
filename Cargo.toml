@@ -1,7 +1,36 @@
 [package]
 name = "liftor"
+authors = ["C-3PO the Dragon Slayer"]
+description = "Functors for Rust lifetimes"
 version = "0.1.0"
 edition = "2021"
+license-file = "LICENSE"
+keywords = [
+    "functor",
+    "lifetimes",
+    "liftor",
+    "gat",
+    "generic",
+    "associated",
+    "type",
+    "curry",
+    "partial",
+    "application",
+    "higher",
+    "kinded",
+    "types",
+    "hkt",
+    "owned",
+    "ref",
+    "refmut",
+    "hrtb",
+    "higher_ranked",
+]
+categories = [
+    "no-std",
+    "rust-patterns",
+]
+repository = "https://github.com/c3potheds/liftor"
 
 [dev-dependencies]
 static_assertions = "1.1.0"
