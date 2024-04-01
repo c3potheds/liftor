@@ -354,6 +354,8 @@
 //! parameterize lifetimes of generic arguments, particularly in CPS, where the
 //! lifetime of the data being borrowed is not known at the time of definition.
 
+#![no_std]
+
 use core::marker::PhantomData;
 
 /// Maps any given lifetime (that is bounded by `'outer`) to a concrete type.
