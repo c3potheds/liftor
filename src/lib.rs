@@ -9,8 +9,8 @@ use core::marker::PhantomData;
 /// associated type `In`. Generally, the type returned by `In` must outlive the
 /// lifetime `'outer`.
 ///
-/// Implementations of `Liftor` can generically implement for all lifetimes
-/// `'outer` that borrow the type returned by `In`. For example, `Ref<T>`
+/// Implementations of [`Liftor`] can generically implement for all lifetimes
+/// `'outer` that borrow the type returned by `In`. For example, [`Ref<T>`]
 /// implements `Liftor<'outer>` for all lifetimes `'outer` where `T: 'outer`.
 /// This allows `Ref<T>` and other `Liftor`s that use this pattern to work even
 /// on non-`'static` types, i.e. types that borrow data with a lifetime that is
@@ -64,8 +64,8 @@ pub trait Liftor<'outer> {
 
 /// Maps any lifetime to the type `T`.
 ///
-/// This is a simple `Liftor` implementation that ignores the lifetime parameter
-/// and always returns the same type.
+/// This is a simple [`Liftor`] implementation that ignores the lifetime
+/// parameter and always returns the same type.
 ///
 /// Consider a `Callback` trait that is generic over any `Liftor`:
 ///

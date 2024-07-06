@@ -5,7 +5,7 @@ impl<'outer> Liftor<'outer> for () {
     type In<'inner> = () where 'outer: 'inner;
 }
 
-/// A tuple of `Liftor`s is a `Liftor` of tuples.
+/// A tuple of [`Liftor`]s is a `Liftor` of tuples.
 ///
 /// This lets you use tuples of `Liftor`s as `Liftor`s themselves. For example,
 /// you can use a tuple of `Ref`s as a `Liftor` of a tuple of references, where

@@ -1,4 +1,4 @@
-A `Liftor` maps a given lifetime to a concrete type.
+A [`Liftor`] maps a given lifetime to a concrete type.
 
 The name "liftor" is derived from **lifetime** and **functor**. Just as a
 functor is a mapping of types to types, a liftor is a mapping of lifetimes
@@ -7,9 +7,9 @@ of types parameterized by any lifetime.
 
 This crate provides several implementations of `Liftor` for common cases:
 
-  * `Owned<T>` maps any lifetime `'a` to `T` (ignoring the lifetime).
-  * `Ref<T>` maps any lifetime `'a` to `&'a T`.
-  * `RefMut<T>` maps any lifetime `'a` to `&'a mut T`.
+  * [`Owned<T>`] maps any lifetime `'a` to `T` (ignoring the lifetime).
+  * [`Ref<T>`] maps any lifetime `'a` to `&'a T`.
+  * [`RefMut<T>`] maps any lifetime `'a` to `&'a mut T`.
 
 You can also implement `Liftor` for your own types. For example, you may
 have a struct that borrows strings. You can implement `Liftor` for this
