@@ -92,7 +92,10 @@ impl<'outer, T> Liftor<'outer> for Owned<T>
 where
     T: 'outer,
 {
-    type In<'inner> = T where 'outer: 'inner;
+    type In<'inner>
+        = T
+    where
+        'outer: 'inner;
 }
 
 /// Maps any lifetime to a reference to `T`.
@@ -122,7 +125,10 @@ impl<'outer, T> Liftor<'outer> for Ref<T>
 where
     T: 'outer + ?Sized,
 {
-    type In<'inner> = &'inner T where 'outer: 'inner;
+    type In<'inner>
+        = &'inner T
+    where
+        'outer: 'inner;
 }
 
 /// Maps any lifetime to a mutable reference to `T`.
@@ -152,7 +158,10 @@ impl<'outer, T> Liftor<'outer> for RefMut<T>
 where
     T: 'outer + ?Sized,
 {
-    type In<'inner> = &'inner mut T where 'outer: 'inner;
+    type In<'inner>
+        = &'inner mut T
+    where
+        'outer: 'inner;
 }
 
 /// A type alias for the `In` associated type of a `Liftor`. This can be used to

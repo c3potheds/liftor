@@ -2,7 +2,10 @@ use crate::Liftor;
 
 /// The unit type is a `Liftor` that maps any lifetime to the unit type.
 impl<'outer> Liftor<'outer> for () {
-    type In<'inner> = () where 'outer: 'inner;
+    type In<'inner>
+        = ()
+    where
+        'outer: 'inner;
 }
 
 /// A tuple of [`Liftor`]s is a `Liftor` of tuples.
@@ -18,7 +21,10 @@ where
     A: Liftor<'outer>,
     B: Liftor<'outer>,
 {
-    type In<'inner> = (A::In<'inner>, B::In<'inner>) where 'outer: 'inner;
+    type In<'inner>
+        = (A::In<'inner>, B::In<'inner>)
+    where
+        'outer: 'inner;
 }
 
 impl<'outer, A, B, C> Liftor<'outer> for (A, B, C)
@@ -27,11 +33,8 @@ where
     B: Liftor<'outer>,
     C: Liftor<'outer>,
 {
-    type In<'inner> = (
-        A::In<'inner>,
-        B::In<'inner>,
-        C::In<'inner>,
-    )
+    type In<'inner>
+        = (A::In<'inner>, B::In<'inner>, C::In<'inner>)
     where
         'outer: 'inner;
 }
@@ -43,12 +46,8 @@ where
     C: Liftor<'outer>,
     D: Liftor<'outer>,
 {
-    type In<'inner> = (
-        A::In<'inner>,
-        B::In<'inner>,
-        C::In<'inner>,
-        D::In<'inner>,
-    )
+    type In<'inner>
+        = (A::In<'inner>, B::In<'inner>, C::In<'inner>, D::In<'inner>)
     where
         'outer: 'inner;
 }
@@ -61,7 +60,8 @@ where
     D: Liftor<'outer>,
     E: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -81,7 +81,8 @@ where
     E: Liftor<'outer>,
     F: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -103,7 +104,8 @@ where
     F: Liftor<'outer>,
     G: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -127,7 +129,8 @@ where
     G: Liftor<'outer>,
     H: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -154,7 +157,8 @@ where
     H: Liftor<'outer>,
     I: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -183,7 +187,8 @@ where
     I: Liftor<'outer>,
     J: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -214,7 +219,8 @@ where
     J: Liftor<'outer>,
     K: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -247,7 +253,8 @@ where
     K: Liftor<'outer>,
     L: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -282,7 +289,8 @@ where
     L: Liftor<'outer>,
     M: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -319,7 +327,8 @@ where
     M: Liftor<'outer>,
     N: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -358,7 +367,8 @@ where
     N: Liftor<'outer>,
     O: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
@@ -399,7 +409,8 @@ where
     O: Liftor<'outer>,
     P: Liftor<'outer>,
 {
-    type In<'inner> = (
+    type In<'inner>
+        = (
         A::In<'inner>,
         B::In<'inner>,
         C::In<'inner>,
