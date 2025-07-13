@@ -147,7 +147,9 @@ assert_type_eq_all!(
             RefMut<i32>
         ),
     >,
-    (&i32, &mut i32, &i32, &mut i32, &i32, &mut i32, &i32, &mut i32)
+    (
+        &i32, &mut i32, &i32, &mut i32, &i32, &mut i32, &i32, &mut i32
+    )
 );
 assert_type_eq_all!(
     In<
@@ -163,7 +165,9 @@ assert_type_eq_all!(
             Ref<i32>
         ),
     >,
-    (&mut i32, &i32, &mut i32, &i32, &mut i32, &i32, &mut i32, &i32)
+    (
+        &mut i32, &i32, &mut i32, &i32, &mut i32, &i32, &mut i32, &i32
+    )
 );
 assert_type_eq_all!(
     In<
@@ -180,5 +184,7 @@ assert_type_eq_all!(
             Owned<i32>
         ),
     >,
-    (&i32, &mut i32, &i32, &mut i32, &i32, &mut i32, &i32, &mut i32, i32)
+    (
+        &i32, &mut i32, &i32, &mut i32, &i32, &mut i32, &i32, &mut i32, i32
+    )
 );
